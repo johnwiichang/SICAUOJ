@@ -1,0 +1,88 @@
+﻿@model OJ_WebApp.Models.Task
+
+@{
+    var issue = (OJ_WebApp.Models.Issue)ViewData["issue"];
+    ViewBag.Title = issue.Title;
+}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['[math]','[/math]'], ['[Math]','[/Math]']]}
+    });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            @Resources.Language.Question @Resources.Language.Detail
+        </div>
+        <div class="panel-body">
+            <p>
+                @Html.Raw(issue.Content.ToString().Replace("\r\n", "<br />").Replace("[code]", "<pre>").Replace("[/code]", "</pre>").Replace("[title]", "<h4>").Replace("[/title]", "</h4>").Replace("[img]", "<img src=\"").Replace("[/img]", "\"/>"))
+            </p>
+            <br />
+            <h4>@Resources.Language.Requirement:</h4>
+            <p>
+                @Resources.Language.CompileTimeNotGreaterThan @issue.ComplieTime ms，
+                @Resources.Language.RunTimeNotGreaterThan @issue.RunTime ms, @Resources.Language.MemoryLimitations @issue.PrivateMemorySize B.
+            </p>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<div class="col-lg-12" style="margin:0; padding:0">
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                @Resources.Language.AnswerQuestion
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm("Answer", "Task", FormMethod.Post, new { @role = "form" }))
+            {
+                    <div hidden="hidden">
+                        @Html.TextBoxFor(x => x.Id)
+                    </div>
+                    var Logined = new OJ_WebApp.Models.OJ_WebAppContext().Users.Find(Int32.Parse(User.Identity.Name));
+                    var selectListItems = new List<SelectListItem>();
+                    var compilers = from c in new OJ_WebApp.Models.OJ_WebAppContext().Compilers where !c.isForbidden select c;
+                    foreach (var item in compilers)
+                    {
+                        var tempItem = new SelectListItem();
+                        tempItem.Text = item.Name;
+                        tempItem.Value = item.Id.ToString();
+                        if (Logined.Compiler != null && item.Id == Logined.Compiler.Id)
+                        {
+                            tempItem.Selected = true;
+                        }
+                        selectListItems.Add(tempItem);
+                    }
+                    <div class="form-group">
+                        <label>@Resources.Language.Compiler:</label>
+                        @Html.DropDownListFor(x => x.Compiler.Id, selectListItems, new { @class = "form-control", style = "width: 40%" })
+                    </div>
+                    <div class="form-group">
+                        <label>@Resources.Language.Code:</label>
+                        @Html.TextAreaFor(x => x.Answer, new { @class = "form-control", placeholder = Resources.Language.TypeYourCodesHere, rows = "9" })
+                    </div>
+                    <button class="btn btn-default" type="submit">@Resources.Language.Submit</button>
+                }
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                @Resources.Language.Attention
+            </div>
+            <div class="panel-body">
+                @Resources.Language.JavaAttention<code>[thisisanojanswertosicau]</code>.
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+</div>

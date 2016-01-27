@@ -1,0 +1,60 @@
+﻿@model OJ_WebApp.Models.Issue
+
+@{
+    ViewBag.Title = Resources.Language.QuestionDetail + " #" + Model.Id;
+    ViewBag.SmallBtn = "<a href='" + Url.Action("EditProblem", "Admin", new { Id = Model.Id }) + "' class='btn btn-outline btn-primary btn-xs' type='button'>" + Resources.Language.Edit + "</a>";
+}
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['[math]','[/math]'], ['[Math]','[/Math]']]}
+    });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            @Resources.Language.InfoCard
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a aria-expanded="true" href="#home" data-toggle="tab">@Resources.Language.BasicInfo</a>
+                </li>
+                <li>
+                    <a aria-expanded="false" href="#profile" data-toggle="tab">@Resources.Language.TakePartIn</a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="home">
+                    <h4>@Resources.Language.BasicInfo</h4>
+                    <p>
+                        <hr />
+                        @Resources.Language.Question: @Model.Title
+                        <hr />
+                        @Resources.Language.CompileTime: @Model.ComplieTime ms
+                        <hr />
+                        @Resources.Language.RunTime: @Model.RunTime ms
+                        <hr />
+                        @Resources.Language.MemoryLimitations: @Model.PrivateMemorySize B
+                        <hr />
+                        @Resources.Language.Description
+                        <br />
+                        @Html.Raw(Model.Content.ToString().Replace("\r\n", "<br />").Replace("[code]", "<pre>").Replace("[/code]", "</pre>").Replace("[title]", "<h4>").Replace("[/title]", "</h4>").Replace("[img]", "<img src=\"").Replace("[/img]", "\"/>"))
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="profile">
+                    <h4>@Resources.Language.TakePartIn</h4>
+                    <p>@Model.Tasks.Count （@((from x in Model.Tasks where x.isPass select x).Count()) @Resources.Language.Passed）</p>
+                    <div id="flot-pie-chart" />
+                </div>
+            </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>

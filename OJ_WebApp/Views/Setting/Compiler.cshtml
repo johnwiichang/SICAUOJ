@@ -1,0 +1,29 @@
+﻿@model IEnumerable<OJ_WebApp.Models.Compiler>
+
+@{
+    ViewBag.Title = @Resources.Language.CompilerSetting;
+    ViewBag.SmallBtn = "<a href='/Setting/AddCompiler' class='btn btn-outline btn-primary btn-xs' type='button'>" + Resources.Language.Add + "</a>";
+}
+<div class="col-lg-12">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>@Resources.Language.Name</th>
+                <th>@Resources.Language.Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td style="color:@(item.isForbidden ? "red" : "black")">@item.Name</td>
+                    <td>
+                        <a href="@Url.Action("EditCompiler", "Setting", new { @Id = item.Id })" class="btn btn-outline btn-success btn-xs" type="button">@Resources.Language.Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

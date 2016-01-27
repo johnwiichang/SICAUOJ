@@ -1,0 +1,786 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>關於</value>
+  </data>
+  <data name="AboutP1" xml:space="preserve">
+    <value>本裁判系統支援多種語言，支援C、C++、Java等以配置經典ACM環境，亦可添加Ruby、Lua等語言以提供更符合使用者個人習慣的裁判服務。任何與語言支援的問題，請嘗試聯繫SICAU OJ小組以尋求方案。</value>
+  </data>
+  <data name="AboutP2" xml:space="preserve">
+    <value>使用者所提交之代碼將會按照時間順序被編譯節點編譯然後由同伺服器的執行節點裁判正誤。你可以訪問任務清單檢閱所有的任務狀態，亦可以按一下詳情按鈕以獲取更多資訊。管理員可以查閱到由節點的返回值，如果有需要，請嘗試與他們聯繫。</value>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>答案正確</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>帳戶</value>
+  </data>
+  <data name="AccountFrozen" xml:space="preserve">
+    <value>資訊不正確或帳戶被凍結</value>
+  </data>
+  <data name="AccountManager" xml:space="preserve">
+    <value>帳戶管家</value>
+  </data>
+  <data name="Accuracy" xml:space="preserve">
+    <value>準確率</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="AddCompetition" xml:space="preserve">
+    <value>添加比賽</value>
+  </data>
+  <data name="AddCompiler" xml:space="preserve">
+    <value>添加編譯器</value>
+  </data>
+  <data name="AddGroup" xml:space="preserve">
+    <value>添加用戶組</value>
+  </data>
+  <data name="AddLib" xml:space="preserve">
+    <value>添加資料庫</value>
+  </data>
+  <data name="AddQuestion" xml:space="preserve">
+    <value>添加題目</value>
+  </data>
+  <data name="AddQuestions" xml:space="preserve">
+    <value>添加題目</value>
+  </data>
+  <data name="AddUser" xml:space="preserve">
+    <value>添加用戶</value>
+  </data>
+  <data name="AnswerQuestion" xml:space="preserve">
+    <value>開始答題</value>
+  </data>
+  <data name="Attention" xml:space="preserve">
+    <value>注意</value>
+  </data>
+  <data name="BasicInfo" xml:space="preserve">
+    <value>基本資訊</value>
+  </data>
+  <data name="BeSerious" xml:space="preserve">
+    <value>請認真作答。</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>代碼</value>
+  </data>
+  <data name="CompetitionList" xml:space="preserve">
+    <value>比賽列表</value>
+  </data>
+  <data name="CompetitionSystem" xml:space="preserve">
+    <value>比賽系統</value>
+  </data>
+  <data name="Compiled" xml:space="preserve">
+    <value>等待執行</value>
+  </data>
+  <data name="CompileError" xml:space="preserve">
+    <value>編譯錯誤</value>
+  </data>
+  <data name="Compiler" xml:space="preserve">
+    <value>編譯器</value>
+  </data>
+  <data name="CompilerAccept" xml:space="preserve">
+    <value>正在編譯</value>
+  </data>
+  <data name="CompilerArguments" xml:space="preserve">
+    <value>編譯參數</value>
+  </data>
+  <data name="CompilerConnection" xml:space="preserve">
+    <value>最後編譯節點時間</value>
+  </data>
+  <data name="CompilerPath" xml:space="preserve">
+    <value>編譯器地址</value>
+  </data>
+  <data name="CompilerSetting" xml:space="preserve">
+    <value>編譯器設定</value>
+  </data>
+  <data name="CompileTime" xml:space="preserve">
+    <value>編譯時間</value>
+  </data>
+  <data name="CompileTimeNotGreaterThan" xml:space="preserve">
+    <value>編譯時間不得超過</value>
+  </data>
+  <data name="Conclusion" xml:space="preserve">
+    <value>結論</value>
+  </data>
+  <data name="ConfirmCode" xml:space="preserve">
+    <value>確認碼</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>確認密碼</value>
+  </data>
+  <data name="Contained" xml:space="preserve">
+    <value>收錄</value>
+  </data>
+  <data name="ContentError" xml:space="preserve">
+    <value>內容錯誤！</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>歡迎中心</value>
+  </data>
+  <data name="DefaultLanguage" xml:space="preserve">
+    <value>預設語言</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>詳情</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>禁用</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>完成。</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>編輯</value>
+  </data>
+  <data name="EditCompetition" xml:space="preserve">
+    <value>編輯比賽</value>
+  </data>
+  <data name="EditGroup" xml:space="preserve">
+    <value>編輯用戶組</value>
+  </data>
+  <data name="EditLib" xml:space="preserve">
+    <value>編輯資料庫</value>
+  </data>
+  <data name="EditQuestion" xml:space="preserve">
+    <value>編輯題目</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>電子郵件</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>在這裡輸入電子郵件。</value>
+  </data>
+  <data name="EmailTaken" xml:space="preserve">
+    <value>該位址已經被註冊，換一個新的再重試。</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>啟用</value>
+  </data>
+  <data name="EndTime" xml:space="preserve">
+    <value>結束時間</value>
+  </data>
+  <data name="Environment" xml:space="preserve">
+    <value>環境</value>
+  </data>
+  <data name="FindPassword" xml:space="preserve">
+    <value>找回密碼</value>
+  </data>
+  <data name="FormatError" xml:space="preserve">
+    <value>格式錯誤</value>
+  </data>
+  <data name="Globalization" xml:space="preserve">
+    <value>全球化</value>
+  </data>
+  <data name="GlobalizationIntroduction" xml:space="preserve">
+    <value>本語言包由SICAU OJ創始人製作。你也可以加入我們來讓更多的人無語言障礙使用線上評測，盛世繁華你我共用。</value>
+  </data>
+  <data name="GreaterThan" xml:space="preserve">
+    <value>大於</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>用戶組</value>
+  </data>
+  <data name="GroupName" xml:space="preserve">
+    <value>組名</value>
+  </data>
+  <data name="GroupQA" xml:space="preserve">
+    <value>一個用戶可以在多個用戶組。</value>
+  </data>
+  <data name="Heartbeat" xml:space="preserve">
+    <value>心跳包</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>SICAU OJ 是一個開源的線上評測系統，由 Johnwii.Chang 創始。起初本系統為首屆四川農業大學演算法比賽設計。</value>
+  </data>
+  <data name="IdofTask" xml:space="preserve">
+    <value>任務ID。</value>
+  </data>
+  <data name="InfoCard" xml:space="preserve">
+    <value>信息卡</value>
+  </data>
+  <data name="InFormat" xml:space="preserve">
+    <value>代碼檔案格式</value>
+  </data>
+  <data name="InformationNotComplete" xml:space="preserve">
+    <value>所提供的資訊不完整。</value>
+  </data>
+  <data name="InformationNotMatch" xml:space="preserve">
+    <value>所提供資訊不匹配。</value>
+  </data>
+  <data name="Input" xml:space="preserve">
+    <value>輸入</value>
+  </data>
+  <data name="InQueue" xml:space="preserve">
+    <value>任務在列</value>
+  </data>
+  <data name="IsAdmin" xml:space="preserve">
+    <value>本組是管理組。</value>
+  </data>
+  <data name="JavaAttention" xml:space="preserve">
+    <value>Java使用者需要將類名改為：</value>
+  </data>
+  <data name="JoinStr" xml:space="preserve">
+    <value>前文已述，SICAU OJ 是開源產品，你可以訪問 www.sicauoj.com 來查找更多資訊。你可以下載最新的安裝包以更新你的軟體，也可以拜訪我們的 GitHub 頁面來提出問題或者提交你的代碼。親自下載原始程式碼，體驗下一代 SICAU OJ 的奧義或者製作你自己的版本， 未來，你我共創。</value>
+  </data>
+  <data name="JoinUs" xml:space="preserve">
+    <value>正在進行時</value>
+  </data>
+  <data name="LanguagePack" xml:space="preserve">
+    <value>繁體中文語言包</value>
+  </data>
+  <data name="LanguagePackMaker" xml:space="preserve">
+    <value>點擊這裡瞭解全球化計畫</value>
+  </data>
+  <data name="LanguagePackMakerURL" xml:space="preserve">
+    <value>http://prpr.pro/?go=195ea</value>
+  </data>
+  <data name="LanguageSupport" xml:space="preserve">
+    <value>語言支援</value>
+  </data>
+  <data name="LibDescription" xml:space="preserve">
+    <value>資源庫描述</value>
+  </data>
+  <data name="LibGroupQA" xml:space="preserve">
+    <value>如果你勾選了核取方塊，某些用戶組成員可能無法訪問本資源庫。</value>
+  </data>
+  <data name="LibName" xml:space="preserve">
+    <value>資源庫名</value>
+  </data>
+  <data name="Libraries" xml:space="preserve">
+    <value>資源庫</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>登陸</value>
+  </data>
+  <data name="LoginWithSpace" xml:space="preserve">
+    <value>登陸</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>註銷</value>
+  </data>
+  <data name="LostStatus" xml:space="preserve">
+    <value>丟失狀態</value>
+  </data>
+  <data name="LowerThan15" xml:space="preserve">
+    <value>小於 15.6001</value>
+  </data>
+  <data name="ManageLibraries" xml:space="preserve">
+    <value>管理資源庫</value>
+  </data>
+  <data name="MaxTask" xml:space="preserve">
+    <value>最大任務</value>
+  </data>
+  <data name="MaxTaskStr" xml:space="preserve">
+    <value>本設定將會同時作用於兩個服務，即伺服器上任務總數應為本設定值的二倍。</value>
+  </data>
+  <data name="Member" xml:space="preserve">
+    <value>成員</value>
+  </data>
+  <data name="MemberSum" xml:space="preserve">
+    <value>成員數</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>記憶體</value>
+  </data>
+  <data name="MemoryLimitations" xml:space="preserve">
+    <value>記憶體用量不得超過</value>
+  </data>
+  <data name="Mistake" xml:space="preserve">
+    <value>錯誤</value>
+  </data>
+  <data name="MoreInfoContactUs" xml:space="preserve">
+    <value>如果您想獲得更多資訊，請使用下方字串聯繫我們：</value>
+  </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>我的帳戶</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名稱</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>新密碼</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="Node" xml:space="preserve">
+    <value>節點</value>
+  </data>
+  <data name="NodeSetting" xml:space="preserve">
+    <value>節點設定</value>
+  </data>
+  <data name="NotFund" xml:space="preserve">
+    <value>無法找到所請求的資源。</value>
+  </data>
+  <data name="OJAttribute" xml:space="preserve">
+    <value>OJ標籤</value>
+  </data>
+  <data name="OJA_Code" xml:space="preserve">
+    <value>標記代碼區域，使用本標籤將會讓代碼更易於閱讀。</value>
+  </data>
+  <data name="OJA_Image" xml:space="preserve">
+    <value>為描述資訊添加圖片。</value>
+  </data>
+  <data name="OJA_Math" xml:space="preserve">
+    <value>使用JavaScript庫渲染拉泰赫運算式。</value>
+  </data>
+  <data name="OJA_Separator" xml:space="preserve">
+    <value>本分隔符號將會被任務池接收然後交付於運行節點。</value>
+  </data>
+  <data name="OJA_SeparatorDescription" xml:space="preserve">
+    <value>你需要在本標籤前後均輸入一個換行回車，實際上系統識別為：</value>
+  </data>
+  <data name="OJA_Title" xml:space="preserve">
+    <value>顯示為標題。</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>舊密碼</value>
+  </data>
+  <data name="OnlineNode" xml:space="preserve">
+    <value>線上節點</value>
+  </data>
+  <data name="OnlyAvaliableWhenAdd" xml:space="preserve">
+    <value>僅在添加用戶時可用。</value>
+  </data>
+  <data name="Operation" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="OutFormat" xml:space="preserve">
+    <value>執行格式</value>
+  </data>
+  <data name="OutOfMemory" xml:space="preserve">
+    <value>記憶體超限</value>
+  </data>
+  <data name="OutOfTimeLimitation" xml:space="preserve">
+    <value>時間超限</value>
+  </data>
+  <data name="Output" xml:space="preserve">
+    <value>輸出</value>
+  </data>
+  <data name="Passed" xml:space="preserve">
+    <value>通過</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>密碼</value>
+  </data>
+  <data name="PasswordTooShort" xml:space="preserve">
+    <value>密碼過短。</value>
+  </data>
+  <data name="PleaseEnterIDAndSeparateBySharp" xml:space="preserve">
+    <value>使用“#”作為分隔符號輸入Id。</value>
+  </data>
+  <data name="Preferences" xml:space="preserve">
+    <value>偏好設置</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>題目</value>
+  </data>
+  <data name="QuestionCenter" xml:space="preserve">
+    <value>題目中心</value>
+  </data>
+  <data name="QuestionDetail" xml:space="preserve">
+    <value>題目詳情</value>
+  </data>
+  <data name="Questions" xml:space="preserve">
+    <value>題目</value>
+  </data>
+  <data name="QuestionsInThisCollection" xml:space="preserve">
+    <value>本集合內的題目</value>
+  </data>
+  <data name="QuickNavigation" xml:space="preserve">
+    <value>快速導航</value>
+  </data>
+  <data name="Rank" xml:space="preserve">
+    <value>排名</value>
+  </data>
+  <data name="RankQA" xml:space="preserve">
+    <value>你需要使用諸如Excel之類的軟體自行排序。</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>註冊</value>
+  </data>
+  <data name="RegisterEmail" xml:space="preserve">
+    <value>註冊 E-mail</value>
+  </data>
+  <data name="RegisterEmailStr" xml:space="preserve">
+    <value>註冊電子郵寄地址。</value>
+  </data>
+  <data name="RegisterWithSpace" xml:space="preserve">
+    <value>註冊</value>
+  </data>
+  <data name="RegTime" xml:space="preserve">
+    <value>註冊時間</value>
+  </data>
+  <data name="ReJudge" xml:space="preserve">
+    <value>重判</value>
+  </data>
+  <data name="ReJudgeRefused" xml:space="preserve">
+    <value>你的請求被伺服器拒絕，因為</value>
+  </data>
+  <data name="RenewPassword" xml:space="preserve">
+    <value>更新密碼</value>
+  </data>
+  <data name="Reply" xml:space="preserve">
+    <value>答覆資訊</value>
+  </data>
+  <data name="Request" xml:space="preserve">
+    <value>請求</value>
+  </data>
+  <data name="RequestRefused" xml:space="preserve">
+    <value>你的請求被伺服器拒絕。</value>
+  </data>
+  <data name="RequestRegister" xml:space="preserve">
+    <value>請求註冊</value>
+  </data>
+  <data name="RequestReset" xml:space="preserve">
+    <value>請求重設</value>
+  </data>
+  <data name="RequestTooMuch" xml:space="preserve">
+    <value>你的請求過多，請稍後嘗試。</value>
+  </data>
+  <data name="Requirement" xml:space="preserve">
+    <value>要求</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="ReTypeYourPassword" xml:space="preserve">
+    <value>再次輸入你的密碼。</value>
+  </data>
+  <data name="RunnerAccept" xml:space="preserve">
+    <value>正在運行</value>
+  </data>
+  <data name="RunnerArguments" xml:space="preserve">
+    <value>執行參數</value>
+  </data>
+  <data name="RunnerConnection" xml:space="preserve">
+    <value>最後運行節點時間</value>
+  </data>
+  <data name="RunnerPath" xml:space="preserve">
+    <value>執行地址</value>
+  </data>
+  <data name="RunTime" xml:space="preserve">
+    <value>執行時間</value>
+  </data>
+  <data name="RuntimeError" xml:space="preserve">
+    <value>運行錯誤</value>
+  </data>
+  <data name="RunTimeNotGreaterThan" xml:space="preserve">
+    <value>執行時間不得超過</value>
+  </data>
+  <data name="SaveUserNoConfirm" xml:space="preserve">
+    <value>在此處添加帳戶將不會發送任何確認郵件。</value>
+  </data>
+  <data name="SaveUserTypePassword" xml:space="preserve">
+    <value>不論你是否需要更改密碼我們都要求您鍵入當前密碼到舊密碼輸入框內以確保您的帳戶安全。</value>
+  </data>
+  <data name="Script" xml:space="preserve">
+    <value>腳本</value>
+  </data>
+  <data name="ServerRefusedYourRequest" xml:space="preserve">
+    <value>伺服器拒絕了您的請求。</value>
+  </data>
+  <data name="SICAUIEC" xml:space="preserve">
+    <value>四川農業大學信息工程學院</value>
+  </data>
+  <data name="SICAUOJ" xml:space="preserve">
+    <value>四川農業大學線上裁判系統</value>
+  </data>
+  <data name="Solved" xml:space="preserve">
+    <value>已解決</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>開始時間</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>狀態</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>提交</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>摘要</value>
+  </data>
+  <data name="Support32Only" xml:space="preserve">
+    <value>僅32位</value>
+  </data>
+  <data name="Support64" xml:space="preserve">
+    <value>64位</value>
+  </data>
+  <data name="SystemError" xml:space="preserve">
+    <value>系統故障</value>
+  </data>
+  <data name="SystemTools" xml:space="preserve">
+    <value>系統工具</value>
+  </data>
+  <data name="TakePartIn" xml:space="preserve">
+    <value>參與</value>
+  </data>
+  <data name="TaskDetail" xml:space="preserve">
+    <value>任務詳情</value>
+  </data>
+  <data name="TaskList" xml:space="preserve">
+    <value>任務列表</value>
+  </data>
+  <data name="Tasks" xml:space="preserve">
+    <value>任務</value>
+  </data>
+  <data name="ThisIsNotErr" xml:space="preserve">
+    <value>這不是錯誤。</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>時間</value>
+  </data>
+  <data name="TimeQA" xml:space="preserve">
+    <value>系統不會統計早于開始時間或晚於截至時間的提交。</value>
+  </data>
+  <data name="Times" xml:space="preserve">
+    <value>次數</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>標題</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>總數</value>
+  </data>
+  <data name="TypeCompilerArgs" xml:space="preserve">
+    <value>在此處鍵入編譯參數。</value>
+  </data>
+  <data name="TypeCompilerName" xml:space="preserve">
+    <value>在此處鍵入編譯器名稱。</value>
+  </data>
+  <data name="TypeCompilerPath" xml:space="preserve">
+    <value>在此處鍵入編譯器地址。</value>
+  </data>
+  <data name="TypeDescription" xml:space="preserve">
+    <value>在此處鍵入描述資訊。</value>
+  </data>
+  <data name="TypeGroupName" xml:space="preserve">
+    <value>在此處鍵入用戶組名。</value>
+  </data>
+  <data name="TypeHeartbeat" xml:space="preserve">
+    <value>在此處鍵入心跳包間隔時間，單位毫秒。</value>
+  </data>
+  <data name="TypeId" xml:space="preserve">
+    <value>在此處鍵入ID。</value>
+  </data>
+  <data name="TypeInput" xml:space="preserve">
+    <value>在此處鍵入預期輸入內容，使用萬用字元分隔。</value>
+  </data>
+  <data name="TypeLimitation" xml:space="preserve">
+    <value>在此處鍵入限制，單位為位元組。</value>
+  </data>
+  <data name="TypeMaxTask" xml:space="preserve">
+    <value>在此處鍵入並行任務數量。</value>
+  </data>
+  <data name="TypeName" xml:space="preserve">
+    <value>在此處鍵入名稱。</value>
+  </data>
+  <data name="TypeNewPassword" xml:space="preserve">
+    <value>在此處鍵入新密碼。</value>
+  </data>
+  <data name="TypeOldPassword" xml:space="preserve">
+    <value>在此處鍵入舊密碼以確認。</value>
+  </data>
+  <data name="TypeOutput" xml:space="preserve">
+    <value>在此處鍵入預期輸出內容，使用萬用字元分隔。</value>
+  </data>
+  <data name="TypeQuestion" xml:space="preserve">
+    <value>在此處鍵入問題內容。</value>
+  </data>
+  <data name="TypeRunnerArgs" xml:space="preserve">
+    <value>在此處鍵入運行參數。</value>
+  </data>
+  <data name="TypeRunnerPath" xml:space="preserve">
+    <value>在此處鍵入運行位址。</value>
+  </data>
+  <data name="TypeTime" xml:space="preserve">
+    <value>在此處鍵入時間，單位毫秒。</value>
+  </data>
+  <data name="TypeTimeSpan" xml:space="preserve">
+    <value>格式：1995-08-08 00:00:00。</value>
+  </data>
+  <data name="TypeTitle" xml:space="preserve">
+    <value>在此處鍵入標題。</value>
+  </data>
+  <data name="TypeWorkDir" xml:space="preserve">
+    <value>在此處鍵入節點工作目錄。</value>
+  </data>
+  <data name="TypeYourCodesHere" xml:space="preserve">
+    <value>在此處鍵入你的解答。</value>
+  </data>
+  <data name="TypeYourPassword" xml:space="preserve">
+    <value>在此處鍵入你的密碼。</value>
+  </data>
+  <data name="TypeYourUserName" xml:space="preserve">
+    <value>在此處鍵入你的用戶名。</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>用戶</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>用戶名</value>
+  </data>
+  <data name="ValidPermission" xml:space="preserve">
+    <value>許可權不足。</value>
+  </data>
+  <data name="ValidPermissionDetail" xml:space="preserve">
+    <value>你應該向系統管理員尋求更多資訊。</value>
+  </data>
+  <data name="WelcomeToSICAULogin" xml:space="preserve">
+    <value>歡迎登陸四川農業大學線上裁判系統</value>
+  </data>
+  <data name="WelcomeToSICAUReg" xml:space="preserve">
+    <value>歡迎註冊四川農業大學線上裁判系統</value>
+  </data>
+  <data name="WelcomeToSICAUse" xml:space="preserve">
+    <value>歡迎使用四川農業大學線上裁判系統</value>
+  </data>
+  <data name="WeRSorry" xml:space="preserve">
+    <value>我們表示非常抱歉。</value>
+  </data>
+  <data name="Wildcard" xml:space="preserve">
+    <value>萬用字元</value>
+  </data>
+  <data name="WorkDir" xml:space="preserve">
+    <value>工作目錄</value>
+  </data>
+  <data name="WorkDirStr" xml:space="preserve">
+    <value>節點工作目錄。</value>
+  </data>
+  <data name="WrongAnswer" xml:space="preserve">
+    <value>結果錯誤</value>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>密碼錯誤，系統將會登出您的登陸。</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+</root>

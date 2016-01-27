@@ -1,0 +1,89 @@
+﻿@model OJ_WebApp.Models.Mail
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>@Resources.Language.WelcomeToSICAUse</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="~/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="~/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    @Html.Raw(ViewBag.JS)
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel" style="margin-top:5em;">
+                    <div href="#" style="text-align:center; margin-bottom:1em;">
+                        <img src="~/Content/SICAULOGO.png" style="height: 65%; width: 65%;" />
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">@Resources.Language.FindPassword</h3>
+                        </div>
+                        <div class="panel-body">
+                            @using (Html.BeginForm("Find", "User", FormMethod.Post, new { @role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <fieldset>
+                                    <!--[if lt IE 10]><label>@Resources.Language.RegisterEmail:</label><![endif]-->
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = @Resources.Language.RegisterEmailStr, name = "email", type = "email" })
+                                    </div>
+                                    <!-- Change this to a button or input when using this as a form -->
+                                    <button type="submit" class="btn btn-lg btn-warning btn-block">@Resources.Language.RequestReset</button>
+                                    <div style="text-align:right; margin-top:1em;">
+                                        <a href="@Url.Action("Login","User")">@Resources.Language.Login <i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </fieldset>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p style="text-align: center; margin-bottom:5em;">
+        Copyright (C) 2013-@DateTime.Now.Year <a href="http://www.worldu.me/" target="_blank">Johnwii.Chang</a>.
+    </p>
+    <!-- jQuery -->
+    <script src="~/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="~/dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<OJ_WebApp.Models.Issue>
+
+@{
+    Boolean auth = User.IsInRole("Admin") || User.IsInRole("SAdmin");
+    if (auth)
+    {
+        ViewBag.SmallBtn = "<a class='btn btn-primary btn-outline btn-xs' data-toggle='modal' data-target='#addProblems'>"+ Resources.Language.QuestionsInThisCollection + "</a>";
+        <div tabindex="-1" class="modal fade" id="addProblems" role="dialog" aria-hidden="true" aria-labelledby="myModalLabel" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                        <h4 class="modal-title" id="myModalLabel">@Resources.Language.AddQuestions</h4>
+                    </div>
+                    <div class="modal-body">
+                        @using (Html.BeginForm("AddIssue", "Admin", FormMethod.Post, new { @id = "AddIssueForm" }))
+                {
+                            <div hidden="hidden">
+                                <input type="text" value=@ViewBag.Lib name="LibId" />
+                            </div>
+                            String g = "";
+                            OJ_WebApp.Models.Lib entity = new OJ_WebApp.Models.OJ_WebAppContext().Libs.Find(ViewBag.Lib);
+                            if (entity.Issues != null)
+                            {
+                                foreach (var item in entity.Issues)
+                                {
+                                    g += "#" + item.Id;
+                                }
+                            }
+                            <textarea class="form-control" placeholder='@Resources.Language.PleaseEnterIDAndSeparateBySharp' rows="5" name="issues">@g</textarea>
+                        }
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" type="button" data-dismiss="modal">@Resources.Language.Cancel</button>
+                        <button class="btn btn-primary" type="button" onclick="submitAddIssue()">@Resources.Language.Submit</button>
+                        <script>
+                            function submitAddIssue() {
+                                document.getElementById('AddIssueForm').submit();
+                            }
+                        </script>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+    }
+}
+
+<div class="col-lg-12">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>@Resources.Language.Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    @{
+                        if (auth)
+                        {
+                            <td><a href="@Url.Action("ProblemDetail", "Admin", new { Id = item.Id })" target="_blank">@item.Title</a></td>
+                        }
+                        else
+                        {
+                            <td><a href="@Url.Action("Solve", "Task", new { libid = @ViewBag.Lib, issueid = item.Id })" target="_blank">@item.Title</a></td>
+                        }
+                    }
+                </tr>
+                        }
+        </tbody>
+    </table>
+    @if (auth)
+    {
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("LibOverView", "Admin", new { Id = ViewBag.Lib, page = page }))
+    }
+    else
+    {
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("Lib", "Task", new { libid = ViewBag.Lib, page = page }))
+    }
+</div>

@@ -1,0 +1,69 @@
+﻿@model OJ_WebApp.Models.Task
+
+@{
+    ViewBag.Title = Resources.Language.TaskDetail + " #" + Model.Id;
+    ViewBag.SmallBtn = "<a href='" + Url.Action("RefreshTask", "Admin", new { Id = Model.Id }) + "' class='btn btn-outline btn-danger btn-xs' type='button'>" + Resources.Language.ReJudge + "</a>";
+    Boolean auth = User.IsInRole("Admin") || User.IsInRole("SAdmin");
+}
+
+<div hidden="hidden">
+    @Html.TextBoxFor(x => x.Reply, new { @id = "jsend" })
+</div>
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            @Resources.Language.InfoCard
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a aria-expanded="true" href="#home" data-toggle="tab">@Resources.Language.BasicInfo</a>
+                </li>
+                <li>
+                    <a aria-expanded="false" href="#scode" data-toggle="tab">@Resources.Language.Code</a>
+                </li>
+                @if (auth)
+                {
+                    <li>
+                        <a aria-expanded="false" href="#messages" data-toggle="tab">@Resources.Language.Reply</a>
+                    </li>
+                }
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="home">
+                    <h4 style="margin-top:1.5em">@Model.CreateTime</h4>
+                    <p>
+                        <hr />
+                        @Resources.Language.Title: @Model.Issue.Title
+                        <hr />
+                        @Resources.Language.CompileTime: @(Model.status == "TLE" && Model.Runtime == null ? Resources.Language.GreaterThan + Model.Issue.ComplieTime : (Model.Compiletime != null) ? Model.Compiletime.Value == 0 ? Resources.Language.LowerThan15 : Model.Compiletime.ToString() : "") ms
+                        <hr />
+                        @Resources.Language.RunTime: @(Model.status == "TLE" && Model.Compiletime != null ? Resources.Language.GreaterThan + Model.Issue.RunTime : (Model.Runtime != null) ? Model.Runtime.Value == 0 ? Resources.Language.LowerThan15 : Model.Runtime.ToString() : "") ms
+                        <hr />
+                        @Resources.Language.Memory: @(Model.Mem ?? 0) B
+                        <hr />
+                        @Resources.Language.UserName: @Model.Owner.Name
+                        <hr />
+                        @Resources.Language.Conclusion: @(Model.isPass ? Resources.Language.Passed : Model.result)
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="scode">
+                    <h4 style="margin-top:1.5em">@Model.Compiler.Name</h4>
+                    <pre>@Model.Answer</pre>
+                </div>
+                @if (auth)
+                {
+                    <div class="tab-pane fade" id="messages">
+                        <h4 style="margin-top:1.5em">@Resources.Language.Reply</h4>
+                        <pre>@((Model.Reply??"").Replace("\r\n[thisisaseparator]\r\n", "\r\n"))</pre>
+                    </div>
+                }
+            </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>

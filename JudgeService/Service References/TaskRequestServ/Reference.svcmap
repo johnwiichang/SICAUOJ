@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="83de779e-097e-4b22-87c9-8d9d4d1f2a94" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:58297/TaskPool.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TaskPool.xsd" MetadataType="Schema" ID="bfb57a97-00e7-44a3-82ec-4feb4df1f64c" SourceId="1" SourceUrl="http://localhost:58297/TaskPool.svc?xsd=xsd2" />
+    <MetadataFile FileName="TaskPool1.xsd" MetadataType="Schema" ID="30246e30-cd88-4010-8f9c-66a3cabe249e" SourceId="1" SourceUrl="http://localhost:58297/TaskPool.svc?xsd=xsd0" />
+    <MetadataFile FileName="TaskPool.wsdl" MetadataType="Wsdl" ID="306e1f69-f44e-4205-89b4-2405341ba16c" SourceId="1" SourceUrl="http://localhost:58297/TaskPool.svc?wsdl" />
+    <MetadataFile FileName="TaskPool2.xsd" MetadataType="Schema" ID="df36b308-663f-4f9d-91fb-2c091306457d" SourceId="1" SourceUrl="http://localhost:58297/TaskPool.svc?xsd=xsd1" />
+    <MetadataFile FileName="TaskPool.disco" MetadataType="Disco" ID="4868c14b-26f3-497c-85cb-c295359c788a" SourceId="1" SourceUrl="http://localhost:58297/TaskPool.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,36 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<OJ_WebApp.Models.Node>
+
+@{
+    ViewBag.Title = @Resources.Language.OnlineNode;
+}
+
+<div class="col-lg-12">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>@Resources.Language.CompilerConnection</th>
+                <th>@Resources.Language.RunnerConnection</th>
+                <th>@Resources.Language.WorkDir</th>
+                <th>@Resources.Language.MaxTask</th>
+                <th>@Resources.Language.Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.CompilerLastReport (@item.Compiling)</td>
+                    <td>@item.RunnerLastReport (@item.Running)</td>
+                    <td>@item.WorkDir</td>
+                    <td>@item.MaxTask</td>
+                    <td><a class="btn btn-outline btn-@(item.inUse ? "success" : "danger") btn-xs" href="@Url.Action("EditNode", "Setting", new { Id = item.Name })">@Resources.Language.Edit</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Node", "Setting", new { page }))
+</div>

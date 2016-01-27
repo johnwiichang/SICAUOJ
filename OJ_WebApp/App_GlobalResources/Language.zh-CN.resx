@@ -1,0 +1,786 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account" xml:space="preserve">
+    <value>账户</value>
+  </data>
+  <data name="AccountManager" xml:space="preserve">
+    <value>账户管家</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="AddQuestions" xml:space="preserve">
+    <value>添加题目</value>
+  </data>
+  <data name="AnswerQuestion" xml:space="preserve">
+    <value>开始答题</value>
+  </data>
+  <data name="Attention" xml:space="preserve">
+    <value>注意</value>
+  </data>
+  <data name="BasicInfo" xml:space="preserve">
+    <value>基本信息</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>代码</value>
+  </data>
+  <data name="ConfirmCode" xml:space="preserve">
+    <value>确认码</value>
+  </data>
+  <data name="CompetitionList" xml:space="preserve">
+    <value>比赛列表</value>
+  </data>
+  <data name="CompetitionSystem" xml:space="preserve">
+    <value>比赛系统</value>
+  </data>
+  <data name="Compiler" xml:space="preserve">
+    <value>编译器</value>
+  </data>
+  <data name="CompilerArguments" xml:space="preserve">
+    <value>编译参数</value>
+  </data>
+  <data name="CompilerConnection" xml:space="preserve">
+    <value>最后编译节点时间</value>
+  </data>
+  <data name="CompilerPath" xml:space="preserve">
+    <value>编译器地址</value>
+  </data>
+  <data name="CompilerSetting" xml:space="preserve">
+    <value>编译器设定</value>
+  </data>
+  <data name="CompileTime" xml:space="preserve">
+    <value>编译时间</value>
+  </data>
+  <data name="CompileTimeNotGreaterThan" xml:space="preserve">
+    <value>编译时间不得超过</value>
+  </data>
+  <data name="Conclusion" xml:space="preserve">
+    <value>结论</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>确认密码</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>欢迎中心</value>
+  </data>
+  <data name="DefaultLanguage" xml:space="preserve">
+    <value>默认语言</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>详情</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>禁用</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>电子邮件</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>在这里输入电子邮件。</value>
+  </data>
+  <data name="EndTime" xml:space="preserve">
+    <value>结束时间</value>
+  </data>
+  <data name="FindPassword" xml:space="preserve">
+    <value>找回密码</value>
+  </data>
+  <data name="GreaterThan" xml:space="preserve">
+    <value>大于</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>用户组</value>
+  </data>
+  <data name="InfoCard" xml:space="preserve">
+    <value>信息卡</value>
+  </data>
+  <data name="InFormat" xml:space="preserve">
+    <value>代码文件格式</value>
+  </data>
+  <data name="JavaAttention" xml:space="preserve">
+    <value>Java用户需要将类名改为：</value>
+  </data>
+  <data name="LanguageSupport" xml:space="preserve">
+    <value>语言支持</value>
+  </data>
+  <data name="Libraries" xml:space="preserve">
+    <value>资源库</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>登陆</value>
+  </data>
+  <data name="LoginWithSpace" xml:space="preserve">
+    <value>登陆 </value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>注销</value>
+  </data>
+  <data name="LostStatus" xml:space="preserve">
+    <value>丢失状态</value>
+  </data>
+  <data name="LowerThan15" xml:space="preserve">
+    <value>小于 15.6001</value>
+  </data>
+  <data name="ManageLibraries" xml:space="preserve">
+    <value>管理资源库</value>
+  </data>
+  <data name="MaxTask" xml:space="preserve">
+    <value>最大任务</value>
+  </data>
+  <data name="Memory" xml:space="preserve">
+    <value>内存</value>
+  </data>
+  <data name="MemoryLimitations" xml:space="preserve">
+    <value>内存用量不得超过</value>
+  </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>我的账户</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>新密码</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>旧密码</value>
+  </data>
+  <data name="OnlineNode" xml:space="preserve">
+    <value>在线节点</value>
+  </data>
+  <data name="OnlyAvaliableWhenAdd" xml:space="preserve">
+    <value>仅在添加用户时可用。</value>
+  </data>
+  <data name="Operation" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="OutFormat" xml:space="preserve">
+    <value>执行格式</value>
+  </data>
+  <data name="Passed" xml:space="preserve">
+    <value>通过</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="PleaseEnterIDAndSeparateBySharp" xml:space="preserve">
+    <value>使用“#”作为分隔符输入Id。</value>
+  </data>
+  <data name="Preferences" xml:space="preserve">
+    <value>偏好设置</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>题目</value>
+  </data>
+  <data name="QuestionCenter" xml:space="preserve">
+    <value>题目中心</value>
+  </data>
+  <data name="Questions" xml:space="preserve">
+    <value>题目</value>
+  </data>
+  <data name="QuestionsInThisCollection" xml:space="preserve">
+    <value>本集合内的题目</value>
+  </data>
+  <data name="QuickNavigation" xml:space="preserve">
+    <value>快速导航</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>注册</value>
+  </data>
+  <data name="RegisterEmail" xml:space="preserve">
+    <value>注册 E-mail</value>
+  </data>
+  <data name="RegisterEmailStr" xml:space="preserve">
+    <value>注册电子邮件地址。</value>
+  </data>
+  <data name="RegisterWithSpace" xml:space="preserve">
+    <value>注册 </value>
+  </data>
+  <data name="ReJudge" xml:space="preserve">
+    <value>重判</value>
+  </data>
+  <data name="RenewPassword" xml:space="preserve">
+    <value>更新密码</value>
+  </data>
+  <data name="Reply" xml:space="preserve">
+    <value>答复信息</value>
+  </data>
+  <data name="RequestRegister" xml:space="preserve">
+    <value>请求注册</value>
+  </data>
+  <data name="RequestReset" xml:space="preserve">
+    <value>请求重设</value>
+  </data>
+  <data name="Requirement" xml:space="preserve">
+    <value>要求</value>
+  </data>
+  <data name="ReTypeYourPassword" xml:space="preserve">
+    <value>再次输入你的密码。</value>
+  </data>
+  <data name="RunnerArguments" xml:space="preserve">
+    <value>执行参数</value>
+  </data>
+  <data name="RunnerConnection" xml:space="preserve">
+    <value>最后运行节点时间</value>
+  </data>
+  <data name="RunnerPath" xml:space="preserve">
+    <value>执行地址</value>
+  </data>
+  <data name="RunTime" xml:space="preserve">
+    <value>执行时间</value>
+  </data>
+  <data name="RunTimeNotGreaterThan" xml:space="preserve">
+    <value>运行时间不得超过</value>
+  </data>
+  <data name="Script" xml:space="preserve">
+    <value>脚本</value>
+  </data>
+  <data name="SICAUIEC" xml:space="preserve">
+    <value>四川农业大学信息工程学院</value>
+  </data>
+  <data name="SICAUOJ" xml:space="preserve">
+    <value>四川农业大学在线裁判系统</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>开始时间</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>提交</value>
+  </data>
+  <data name="SystemTools" xml:space="preserve">
+    <value>系统工具</value>
+  </data>
+  <data name="TaskDetail" xml:space="preserve">
+    <value>任务详情</value>
+  </data>
+  <data name="TaskList" xml:space="preserve">
+    <value>任务列表</value>
+  </data>
+  <data name="Tasks" xml:space="preserve">
+    <value>任务</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>时间</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>标题</value>
+  </data>
+  <data name="TypeCompilerArgs" xml:space="preserve">
+    <value>在此处键入编译参数。</value>
+  </data>
+  <data name="TypeCompilerName" xml:space="preserve">
+    <value>在此处键入编译器名称。</value>
+  </data>
+  <data name="TypeCompilerPath" xml:space="preserve">
+    <value>在此处键入编译器地址。</value>
+  </data>
+  <data name="TypeNewPassword" xml:space="preserve">
+    <value>在此处键入新密码。</value>
+  </data>
+  <data name="TypeOldPassword" xml:space="preserve">
+    <value>在此处键入旧密码以确认。</value>
+  </data>
+  <data name="TypeRunnerArgs" xml:space="preserve">
+    <value>在此处键入运行参数。</value>
+  </data>
+  <data name="TypeRunnerPath" xml:space="preserve">
+    <value>在此处键入运行地址。</value>
+  </data>
+  <data name="TypeYourCodesHere" xml:space="preserve">
+    <value>在此处键入你的解答。</value>
+  </data>
+  <data name="TypeYourPassword" xml:space="preserve">
+    <value>在此处键入你的密码。</value>
+  </data>
+  <data name="TypeYourUserName" xml:space="preserve">
+    <value>在此处键入你的用户名。</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>用户</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="WorkDir" xml:space="preserve">
+    <value>工作目录</value>
+  </data>
+  <data name="Contained" xml:space="preserve">
+    <value>收录</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="EditCompetition" xml:space="preserve">
+    <value>编辑比赛</value>
+  </data>
+  <data name="EditGroup" xml:space="preserve">
+    <value>编辑用户组</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>启用</value>
+  </data>
+  <data name="Environment" xml:space="preserve">
+    <value>环境</value>
+  </data>
+  <data name="GroupName" xml:space="preserve">
+    <value>组名</value>
+  </data>
+  <data name="IdofTask" xml:space="preserve">
+    <value>任务ID。</value>
+  </data>
+  <data name="IsAdmin" xml:space="preserve">
+    <value>本组是管理组。</value>
+  </data>
+  <data name="MaxTaskStr" xml:space="preserve">
+    <value>本设定将会同时作用于两个服务，即服务器上任务总数应为本设定值的二倍。</value>
+  </data>
+  <data name="Member" xml:space="preserve">
+    <value>成员</value>
+  </data>
+  <data name="MemberSum" xml:space="preserve">
+    <value>成员数</value>
+  </data>
+  <data name="Mistake" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="MoreInfoContactUs" xml:space="preserve">
+    <value>如果您想获得更多信息，请使用下方字符串联系我们：</value>
+  </data>
+  <data name="Node" xml:space="preserve">
+    <value>节点</value>
+  </data>
+  <data name="NodeSetting" xml:space="preserve">
+    <value>节点设定</value>
+  </data>
+  <data name="QuestionDetail" xml:space="preserve">
+    <value>题目详情</value>
+  </data>
+  <data name="Rank" xml:space="preserve">
+    <value>排名</value>
+  </data>
+  <data name="RankQA" xml:space="preserve">
+    <value>你需要使用诸如Excel之类的软件自行排序。</value>
+  </data>
+  <data name="ServerRefusedYourRequest" xml:space="preserve">
+    <value>服务器拒绝了您的请求。</value>
+  </data>
+  <data name="Solved" xml:space="preserve">
+    <value>已解决</value>
+  </data>
+  <data name="Support32Only" xml:space="preserve">
+    <value>仅32位</value>
+  </data>
+  <data name="Support64" xml:space="preserve">
+    <value>64位</value>
+  </data>
+  <data name="TakePartIn" xml:space="preserve">
+    <value>参与</value>
+  </data>
+  <data name="ThisIsNotErr" xml:space="preserve">
+    <value>这不是错误。</value>
+  </data>
+  <data name="TimeQA" xml:space="preserve">
+    <value>系统不会统计早于开始时间或晚于截至时间的提交。</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>总数</value>
+  </data>
+  <data name="TypeGroupName" xml:space="preserve">
+    <value>在此处键入用户组名。</value>
+  </data>
+  <data name="TypeId" xml:space="preserve">
+    <value>在此处键入ID。</value>
+  </data>
+  <data name="TypeMaxTask" xml:space="preserve">
+    <value>在此处键入并行任务数量。</value>
+  </data>
+  <data name="TypeTitle" xml:space="preserve">
+    <value>在此处键入标题。</value>
+  </data>
+  <data name="TypeWorkDir" xml:space="preserve">
+    <value>在此处键入节点工作目录。</value>
+  </data>
+  <data name="ValidPermission" xml:space="preserve">
+    <value>权限不足。</value>
+  </data>
+  <data name="ValidPermissionDetail" xml:space="preserve">
+    <value>你应该向系统管理员寻求更多信息。</value>
+  </data>
+  <data name="WeRSorry" xml:space="preserve">
+    <value>我们表示非常抱歉。</value>
+  </data>
+  <data name="Wildcard" xml:space="preserve">
+    <value>通配符</value>
+  </data>
+  <data name="WorkDirStr" xml:space="preserve">
+    <value>节点工作目录。</value>
+  </data>
+  <data name="WelcomeToSICAULogin" xml:space="preserve">
+    <value>欢迎登陆四川农业大学在线裁判系统</value>
+  </data>
+  <data name="WelcomeToSICAUReg" xml:space="preserve">
+    <value>欢迎注册四川农业大学在线裁判系统</value>
+  </data>
+  <data name="WelcomeToSICAUse" xml:space="preserve">
+    <value>欢迎使用四川农业大学在线裁判系统</value>
+  </data>
+  <data name="AccountFrozen" xml:space="preserve">
+    <value>信息不正确或账户被冻结</value>
+  </data>
+  <data name="Accuracy" xml:space="preserve">
+    <value>准确率</value>
+  </data>
+  <data name="AddCompetition" xml:space="preserve">
+    <value>添加比赛</value>
+  </data>
+  <data name="AddCompiler" xml:space="preserve">
+    <value>添加编译器</value>
+  </data>
+  <data name="AddGroup" xml:space="preserve">
+    <value>添加用户组</value>
+  </data>
+  <data name="AddLib" xml:space="preserve">
+    <value>添加资料库</value>
+  </data>
+  <data name="AddQuestion" xml:space="preserve">
+    <value>添加题目</value>
+  </data>
+  <data name="AddUser" xml:space="preserve">
+    <value>添加用户</value>
+  </data>
+  <data name="BeSerious" xml:space="preserve">
+    <value>请认真作答。</value>
+  </data>
+  <data name="ContentError" xml:space="preserve">
+    <value>内容错误！</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>完成。</value>
+  </data>
+  <data name="EditLib" xml:space="preserve">
+    <value>编辑资料库</value>
+  </data>
+  <data name="EditQuestion" xml:space="preserve">
+    <value>编辑题目</value>
+  </data>
+  <data name="EmailTaken" xml:space="preserve">
+    <value>该地址已经被注册，换一个新的再重试。</value>
+  </data>
+  <data name="GroupQA" xml:space="preserve">
+    <value>一个用户可以在多个用户组。</value>
+  </data>
+  <data name="InformationNotMatch" xml:space="preserve">
+    <value>所提供信息不匹配。</value>
+  </data>
+  <data name="Input" xml:space="preserve">
+    <value>输入</value>
+  </data>
+  <data name="LibDescription" xml:space="preserve">
+    <value>资源库描述</value>
+  </data>
+  <data name="LibGroupQA" xml:space="preserve">
+    <value>如果你勾选了复选框，某些用户组成员可能无法访问本资源库。</value>
+  </data>
+  <data name="LibName" xml:space="preserve">
+    <value>资源库名</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="NotFund" xml:space="preserve">
+    <value>无法找到所请求的资源。</value>
+  </data>
+  <data name="OJAttribute" xml:space="preserve">
+    <value>OJ标签</value>
+  </data>
+  <data name="OJA_Code" xml:space="preserve">
+    <value>标记代码区域，使用本标签将会让代码更易于阅读。</value>
+  </data>
+  <data name="OJA_Image" xml:space="preserve">
+    <value>为描述信息添加图片。</value>
+  </data>
+  <data name="OJA_Math" xml:space="preserve">
+    <value>使用JavaScript库渲染拉泰赫表达式。</value>
+  </data>
+  <data name="OJA_Separator" xml:space="preserve">
+    <value>本分隔符将会被任务池接收然后交付于运行节点。</value>
+  </data>
+  <data name="OJA_SeparatorDescription" xml:space="preserve">
+    <value>你需要在本标签前后均输入一个换行回车，实际上系统识别为：</value>
+  </data>
+  <data name="OJA_Title" xml:space="preserve">
+    <value>显示为标题。</value>
+  </data>
+  <data name="Output" xml:space="preserve">
+    <value>输出</value>
+  </data>
+  <data name="PasswordTooShort" xml:space="preserve">
+    <value>密码过短。</value>
+  </data>
+  <data name="RegTime" xml:space="preserve">
+    <value>注册时间</value>
+  </data>
+  <data name="ReJudgeRefused" xml:space="preserve">
+    <value>你的请求被服务器拒绝，因为</value>
+  </data>
+  <data name="Request" xml:space="preserve">
+    <value>请求</value>
+  </data>
+  <data name="RequestRefused" xml:space="preserve">
+    <value>你的请求被服务器拒绝。</value>
+  </data>
+  <data name="RequestTooMuch" xml:space="preserve">
+    <value>你的请求过多，请稍后尝试。</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>结果</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>摘要</value>
+  </data>
+  <data name="Times" xml:space="preserve">
+    <value>次数</value>
+  </data>
+  <data name="TypeDescription" xml:space="preserve">
+    <value>在此处键入描述信息。</value>
+  </data>
+  <data name="TypeInput" xml:space="preserve">
+    <value>在此处键入预期输入内容，使用通配符分隔。</value>
+  </data>
+  <data name="TypeLimitation" xml:space="preserve">
+    <value>在此处键入限制，单位为字节。</value>
+  </data>
+  <data name="TypeName" xml:space="preserve">
+    <value>在此处键入名称。</value>
+  </data>
+  <data name="TypeOutput" xml:space="preserve">
+    <value>在此处键入预期输出内容，使用通配符分隔。</value>
+  </data>
+  <data name="TypeQuestion" xml:space="preserve">
+    <value>在此处键入问题内容。</value>
+  </data>
+  <data name="TypeTime" xml:space="preserve">
+    <value>在此处键入时间，单位毫秒。</value>
+  </data>
+  <data name="TypeTimeSpan" xml:space="preserve">
+    <value>格式：1995-08-08 00:00:00。</value>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>密码错误，系统将会注销您的登陆。</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>答案正确</value>
+  </data>
+  <data name="Compiled" xml:space="preserve">
+    <value>等待执行</value>
+  </data>
+  <data name="CompileError" xml:space="preserve">
+    <value>编译错误</value>
+  </data>
+  <data name="CompilerAccept" xml:space="preserve">
+    <value>正在编译</value>
+  </data>
+  <data name="FormatError" xml:space="preserve">
+    <value>格式错误</value>
+  </data>
+  <data name="InQueue" xml:space="preserve">
+    <value>任务在列</value>
+  </data>
+  <data name="OutOfMemory" xml:space="preserve">
+    <value>内存超限</value>
+  </data>
+  <data name="OutOfTimeLimitation" xml:space="preserve">
+    <value>时间超限</value>
+  </data>
+  <data name="RunnerAccept" xml:space="preserve">
+    <value>正在运行</value>
+  </data>
+  <data name="RuntimeError" xml:space="preserve">
+    <value>运行错误</value>
+  </data>
+  <data name="SystemError" xml:space="preserve">
+    <value>系统故障</value>
+  </data>
+  <data name="WrongAnswer" xml:space="preserve">
+    <value>结果错误</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="AboutP1" xml:space="preserve">
+    <value>本裁判系统支持多种语言，支持C、C++、Java等以配置经典ACM环境，亦可添加Ruby、Lua等语言以提供更符合用户个人习惯的裁判服务。任何与语言支持的问题，请尝试联系SICAU OJ小组以寻求方案。</value>
+  </data>
+  <data name="AboutP2" xml:space="preserve">
+    <value>用户所提交之代码将会按照时间顺序被编译节点编译然后由同服务器的执行节点裁判正误。你可以访问任务列表检阅所有的任务状态，亦可以单击详情按钮以获取更多信息。管理员可以查阅到由节点的返回值，如果有需要，请尝试与他们联系。</value>
+  </data>
+  <data name="Globalization" xml:space="preserve">
+    <value>全球化</value>
+  </data>
+  <data name="GlobalizationIntroduction" xml:space="preserve">
+    <value>本语言包由SICAU OJ创始人制作。你也可以加入我们来让更多的人无语言障碍使用在线评测，盛世繁华你我共享。</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>SICAU OJ 是一个开源的在线评测系统，由 Johnwii.Chang 创始。起初本系统为首届四川农业大学算法比赛设计。</value>
+  </data>
+  <data name="InformationNotComplete" xml:space="preserve">
+    <value>所提供的信息不完整。</value>
+  </data>
+  <data name="JoinStr" xml:space="preserve">
+    <value>前文已述，SICAU OJ 是开源产品，你可以访问 www.sicauoj.com 来查找更多信息。你可以下载最新的安装包以更新你的软件，也可以拜访我们的 GitHub 页面来提出问题或者提交你的代码。亲自下载源代码，体验下一代 SICAU OJ 的奥义或者制作你自己的版本， 未来，你我共创。</value>
+  </data>
+  <data name="JoinUs" xml:space="preserve">
+    <value>正在进行时</value>
+  </data>
+  <data name="LanguagePack" xml:space="preserve">
+    <value>简体中文语言包</value>
+  </data>
+  <data name="LanguagePackMaker" xml:space="preserve">
+    <value>点击这里了解全球化计划</value>
+  </data>
+  <data name="LanguagePackMakerURL" xml:space="preserve">
+    <value>http://prpr.pro/?go=195ea</value>
+  </data>
+  <data name="SaveUserNoConfirm" xml:space="preserve">
+    <value>在此处添加账户将不会发送任何确认邮件。</value>
+  </data>
+  <data name="SaveUserTypePassword" xml:space="preserve">
+    <value>不论你是否需要更改密码我们都要求您键入当前密码到旧密码输入框内以确保您的帐户安全。</value>
+  </data>
+  <data name="Heartbeat" xml:space="preserve">
+    <value>心跳包</value>
+  </data>
+  <data name="TypeHeartbeat" xml:space="preserve">
+    <value>在此处键入心跳包间隔时间，单位毫秒。</value>
+  </data>
+</root>

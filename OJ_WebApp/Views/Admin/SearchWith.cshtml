@@ -1,0 +1,32 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<Dictionary<String, String>>
+
+@{
+
+}
+
+<div class="col-lg-12">
+    <div class="panel-group" id="accordion">
+        @{int counter = 0;}
+        @foreach (var item in Model)
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="collapsed" aria-expanded="false" href="#zhedie@(counter)" data-toggle="collapse" data-parent="#accordion">@item["Name"]</a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="zhedie@(counter++)" aria-expanded="false" style="height: 0px;">
+                    <div class="panel-body">
+                        @Html.Raw(item["Detail"])
+                    </div>
+                    <div class="panel-footer" style="text-align: right">
+                        <a style="text-decoration: none" href="@item["Url"]" target="_blank">@Resources.Language.Detail</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("SearchWith", "Admin", new { key = ViewBag.Key, page = page }))
+</div>

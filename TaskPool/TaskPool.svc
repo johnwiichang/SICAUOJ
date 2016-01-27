@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="TaskPool.TaskPool" CodeBehind="TaskPool.svc.cs" %>

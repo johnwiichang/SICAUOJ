@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = Resources.Language.Dashboard;
+}
+
+<div class="col-lg-12" style="padding:0">
+    <div class="col-lg-8">
+        <div>
+            <h1 style="margin-top:0">
+                SICAU OJ
+                <small>@ViewBag.Version</small>
+            </h1>
+            <p>@Resources.Language.History</p>
+            <h2>
+                @Resources.Language.About
+                <small>@Resources.Language.SICAUOJ</small>
+            </h2>
+            <blockquote>
+                <p>@Resources.Language.AboutP1</p>
+                <p>@Resources.Language.AboutP2</p>
+            </blockquote>
+            <h2>
+                @Resources.Language.Globalization
+                <small>@Resources.Language.LanguagePack</small>
+            </h2>
+            <blockquote>
+                <p>@Resources.Language.GlobalizationIntroduction</p>
+                <p><a href="@Resources.Language.LanguagePackMakerURL" target="_blank">@Resources.Language.LanguagePackMaker</a></p>
+            </blockquote>
+        </div>
+        <!-- /.panel -->
+    </div>
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                @Resources.Language.JoinUs
+            </div>
+            <div class="panel-body">
+                <p>@Resources.Language.JoinStr</p>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                @Resources.Language.Environment
+            </div>
+            <div class="panel-body">
+                <p>@Environment.OSVersion</p>
+                <p>.NET Framework @Environment.Version</p>
+                <hr />
+                <p>@Environment.ProcessorCount Cores CPU / @(@Environment.Is64BitOperatingSystem ? Resources.Language.Support64 : Resources.Language.Support32Only)</p>
+                <p>@(Environment.SystemPageSize) MB RAM</p>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <p style="text-align:center">
+        <em>Based on Microsoft .NET Framework</em>
+    </p>
+</div>

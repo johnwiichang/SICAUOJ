@@ -1,0 +1,39 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<OJ_WebApp.Models.User>
+
+@{
+    ViewBag.SmallBtn = "<a href='" + ViewBag.URL + "' class='btn btn-outline btn-primary btn-xs' type='button'>" + Resources.Language.Add + "</a>";
+}
+
+<div class="col-lg-12">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>@Resources.Language.UserName</th>
+                <th>@Resources.Language.RegTime</th>
+                <th>@Resources.Language.Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="color: @(item.isLost ? "red" : "black")">@item.Id</td>
+                    <td><a href="@Url.Action("UserDetail","Admin",new { id = item.Id })" target="_blank">@item.Name</a></td>
+                    <td>@item.CreateTime</td>
+                    <td><a class="btn btn-outline btn-warning btn-xs" href="@Url.Action("EditUser", "Admin", new { Id = item.Id })">@Resources.Language.Edit</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @if (ViewBag.Id != null)
+    {
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("GroupOverView", "Admin", new { Id = ViewBag.Id, page = page }))
+    }
+    else
+    {
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("UserList", "Admin", new { page }))
+    }
+</div>

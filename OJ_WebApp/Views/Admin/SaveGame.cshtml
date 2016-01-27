@@ -1,0 +1,63 @@
+﻿@model OJ_WebApp.Models.Game
+
+<div class="col-lg-12">
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                @Resources.Language.EditCompetition
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        @using (Html.BeginForm("SaveGame", "Admin", FormMethod.Post, new { @role = "form" }))
+                        {
+                            <div hidden="hidden">
+                                @Html.TextBoxFor(x => x.Id)
+                            </div>
+                            <div class="form-group">
+                                <label>@Resources.Language.Title:</label>
+                                @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = Resources.Language.TypeTitle })
+                            </div>
+                            <div class="form-group">
+                                <label>@Resources.Language.StartTime:</label>
+                                @Html.TextBoxFor(x => x.BeginTime, new { @class = "form-control", placeholder = "1995/08/09 17:25:00" })
+                            </div>
+                            <div class="form-group">
+                                <label>@Resources.Language.EndTime:</label>
+                                @Html.TextBoxFor(x => x.EndTime, new { @class = "form-control", placeholder = "1995/08/09 16:00:00" })
+                            </div>
+                            <div class="form-group">
+                                <label>@Resources.Language.Libraries:</label>
+                                @Html.TextBoxFor(x => x.GameLib.Id, new { @class = "form-control", placeholder = @Resources.Language.TypeId })
+                            </div>
+                            <button class="btn btn-default" type="submit">@Resources.Language.Submit</button>
+
+                        }
+                    </div>
+                </div>
+                <!-- /.row (nested) -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                @Resources.Language.CompetitionSystem
+            </div>
+            <div class="panel-body">
+                <h4>@Resources.Language.Rank</h4>
+                <blockquote>
+                    <p>@Resources.Language.RankQA</p>
+                </blockquote>
+            </div>
+            <div class="panel-body">
+                <h4>@Resources.Language.Time</h4>
+                <blockquote>
+                    <p>@Resources.Language.TimeQA</p>
+                </blockquote>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+﻿@model OJ_WebApp.Models.Compiler
+
+<div class="col-lg-12">
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                @Resources.Language.CompilerSetting
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        @using (Html.BeginForm("SaveCompiler", "Setting", FormMethod.Post, new { @role = "form" }))
+                        {
+                            <div hidden="hidden">
+                                @Html.TextBoxFor(x => x.Id)
+                            </div>
+                            <div class="form-group">
+                                <label>@Resources.Language.Name:</label>
+                                @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = Resources.Language.TypeCompilerName })
+                            </div>
+                            <div class="col-lg-6" style="padding-left: 0">
+                                <div class="form-group">
+                                    <label>@Resources.Language.Disable:</label>
+                                    <label>
+                                        @Html.CheckBoxFor(x => x.isForbidden)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6" style="padding-left: 0">
+                                <div class="form-group">
+                                    <label>@Resources.Language.Script:</label>
+                                    <label>
+                                        @Html.CheckBoxFor(x => x.isScript)
+                                    </label>
+                                </div>
+                            </div>
+                                <div class="form-group">
+                                    <label>@Resources.Language.CompilerPath:</label>
+                                    @Html.TextBoxFor(x => x.CompilerPath, new { @class = "form-control", placeholder = Resources.Language.TypeCompilerName })
+                                </div>
+                                <div class="form-group">
+                                    <label>@Resources.Language.CompilerArguments:</label>
+                                    @Html.TextBoxFor(x => x.CompilerArgs, new { @class = "form-control", placeholder = Resources.Language.TypeCompilerPath })
+                                </div>
+                                <div class="form-group">
+                                    <label>@Resources.Language.RunnerPath:</label>
+                                    @Html.TextBoxFor(x => x.RunnerPath, new { @class = "form-control", placeholder = Resources.Language.TypeRunnerPath })
+                                </div>
+                                <div class="form-group">
+                                    <label>@Resources.Language.RunnerArguments:</label>
+                                    @Html.TextBoxFor(x => x.RunnerArgs, new { @class = "form-control", placeholder = @Resources.Language.TypeRunnerArgs })
+                                </div>
+                                <div class="col-lg-6" style="padding-left: 0">
+                                    <div class="form-group">
+                                        <label>@Resources.Language.InFormat:</label>
+                                        @Html.TextBoxFor(x => x.CodeFormat, new { @class = "form-control", placeholder = ".cs" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" style="padding-left: 0;padding-right: 0">
+                                    <div class="form-group">
+                                        <label>@Resources.Language.OutFormat:</label>
+                                        @Html.TextBoxFor(x => x.ExecutionFormat, new { @class = "form-control", placeholder = ".exe" })
+                                    </div>
+                                </div>
+                                <button class="btn btn-default" type="submit">@Resources.Language.Submit</button>
+                        }
+                    </div>
+                </div>
+                <!-- /.row (nested) -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                @Resources.Language.Wildcard
+            </div>
+            <div class="panel-body">
+                {id}: @Resources.Language.IdofTask
+                <br/>
+                {workdir}: @Resources.Language.WorkDirStr
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+</div>
