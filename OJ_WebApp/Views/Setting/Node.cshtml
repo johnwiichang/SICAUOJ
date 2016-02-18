@@ -14,7 +14,7 @@
                 <th>@Resources.Language.CompilerConnection</th>
                 <th>@Resources.Language.RunnerConnection</th>
                 <th>@Resources.Language.WorkDir</th>
-                <th>@Resources.Language.MaxTask</th>
+                <th>@Resources.Language.BasicInfo</th>
                 <th>@Resources.Language.Operation</th>
             </tr>
         </thead>
@@ -22,11 +22,11 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@item.Name</td>
-                    <td>@item.CompilerLastReport (@item.Compiling)</td>
-                    <td>@item.RunnerLastReport (@item.Running)</td>
-                    <td>@item.WorkDir</td>
-                    <td>@item.MaxTask</td>
+                    <td>@item.Name <br />@item.IPAddress</td>
+                    <td>@item.CompilerLastReport <br />@item.Compiling/@item.MaxTask</td>
+                    <td>@item.RunnerLastReport <br />@item.Running/@item.MaxTask</td>
+                    <td>@item.WorkDir <br />@(item.inUse ? Resources.Language.Enable : Resources.Language.Disable)</td>
+                    <td>@item.SystemInfo <br />@item.RAM MB, @item.Cores Cores</td>
                     <td><a class="btn btn-outline btn-@(item.inUse ? "success" : "danger") btn-xs" href="@Url.Action("EditNode", "Setting", new { Id = item.Name })">@Resources.Language.Edit</a></td>
                 </tr>
             }

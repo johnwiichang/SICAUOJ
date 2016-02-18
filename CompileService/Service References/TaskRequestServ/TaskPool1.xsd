@@ -69,6 +69,10 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RAM" type="xs:long" />
+        <xs:element minOccurs="0" name="Cores" type="xs:int" />
+        <xs:element minOccurs="0" name="SystemInfo" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>

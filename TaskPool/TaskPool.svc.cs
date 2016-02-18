@@ -128,16 +128,21 @@ namespace TaskPool
             return t;
         }
 
-        public Dictionary<String, String> IamOnline(string Id, string type)
+        public Dictionary<string, string> IamOnline(string Id, string IPAddress, long RAM, int Cores, string SystemInfo, string type)
         {
             var node = entity.Nodes.Find(Id);
             var taskinfo = new Dictionary<String, String>();
             if (node == null)
             {
-                node = new Node() { Name = Id };
+                node = new Node() { Name = Id, IPAddress = IPAddress, RAM = RAM, Cores = Cores, SystemInfo = SystemInfo };
                 entity.Nodes.Add(node);
             }
             else if ((type == "r" && node.RunnerLastReport > DateTime.Now.AddSeconds(-10)) || (type == "c" && node.CompilerLastReport > DateTime.Now.AddSeconds(-10)))
+            {
+                taskinfo.Add("Err", "Err");
+                return taskinfo;
+            }
+            else if ((node.RunnerLastReport > DateTime.Now.AddSeconds(-10) || node.CompilerLastReport > DateTime.Now.AddSeconds(-10)) && node.IPAddress != IPAddress)
             {
                 taskinfo.Add("Err", "Err");
                 return taskinfo;
@@ -152,6 +157,10 @@ namespace TaskPool
                 node.RunnerLastReport = DateTime.Now;
                 node.Running = 0;
             }
+            node.RAM = RAM;
+            node.IPAddress = IPAddress;
+            node.SystemInfo = SystemInfo;
+            node.Cores = Cores;
             entity.SaveChanges();
             taskinfo.Add("MaxTask", node.MaxTask.ToString());
             taskinfo.Add("WorkDir", node.WorkDir);

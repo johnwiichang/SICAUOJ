@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Management;
+using System.Net;
 using System.ServiceProcess;
 using System.Threading.Tasks;
 
@@ -27,7 +29,7 @@ namespace CompileService
             using (TaskRequestServ.TaskPoolClient tp = new TaskRequestServ.TaskPoolClient())
             {
                 HostName = GetType().Assembly.Location.Split('\\').LastOrDefault().Substring(1).Replace(".exe", "");
-                var WCFBack = tp.IamOnline(HostName, "c");
+                var WCFBack = tp.IamOnline(HostName, Dns.GetHostEntry(Dns.GetHostName()).AddressList.Where(x=>x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork).FirstOrDefault().ToString(), getRAM(), Environment.ProcessorCount, Environment.OSVersion.ToString(), "c");
                 if (WCFBack["Err"] != "")
                 {
                     throw new Exception("Instance already exist.");
@@ -181,6 +183,28 @@ namespace CompileService
                 updateTaskCompilingResult(Id, "SE", 0f, ex.Message + "\r\n" + ex.Source + "\r\n" + ex.TargetSite);
                 tasks.Remove(Id);
             }
+        }
+
+        private static long getRAM()
+        {
+            try
+            {
+                string st = "";
+                ManagementClass mc = new ManagementClass("Win32_ComputerSystem");
+                ManagementObjectCollection moc = mc.GetInstances();
+                foreach (ManagementObject mo in moc)
+                {
+                    st = mo["TotalPhysicalMemory"].ToString();
+                }
+                moc = null;
+                mc = null;
+                return (Int64.Parse(st) / 1024 / 1024);
+            }
+            catch
+            {
+                return 0;
+            }
+            finally { }
         }
     }
 }

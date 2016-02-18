@@ -25,6 +25,6 @@ namespace TaskPool
         void updateTaskCompilingResult(Int32 Id, String Status, Double CompileTime, String Reply, Int32 tasks);
 
         [OperationContract]
-        Dictionary<String, String> IamOnline(String Id, String type);
+        Dictionary<String, String> IamOnline(String Id, String IPAddress, long RAM, int Cores, String SystemInfo, String type);
     }
 }

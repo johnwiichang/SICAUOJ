@@ -40,10 +40,10 @@ namespace JudgeService.TaskRequestServ {
         System.Threading.Tasks.Task updateTaskCompilingResultAsync(int Id, string Status, double CompileTime, string Reply, int tasks);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITaskPool/IamOnline", ReplyAction="http://tempuri.org/ITaskPool/IamOnlineResponse")]
-        System.Collections.Generic.Dictionary<string, string> IamOnline(string Id, string type);
+        System.Collections.Generic.Dictionary<string, string> IamOnline(string Id, string IPAddress, long RAM, int Cores, string SystemInfo, string type);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITaskPool/IamOnline", ReplyAction="http://tempuri.org/ITaskPool/IamOnlineResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, string>> IamOnlineAsync(string Id, string type);
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, string>> IamOnlineAsync(string Id, string IPAddress, long RAM, int Cores, string SystemInfo, string type);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -105,12 +105,12 @@ namespace JudgeService.TaskRequestServ {
             return base.Channel.updateTaskCompilingResultAsync(Id, Status, CompileTime, Reply, tasks);
         }
         
-        public System.Collections.Generic.Dictionary<string, string> IamOnline(string Id, string type) {
-            return base.Channel.IamOnline(Id, type);
+        public System.Collections.Generic.Dictionary<string, string> IamOnline(string Id, string IPAddress, long RAM, int Cores, string SystemInfo, string type) {
+            return base.Channel.IamOnline(Id, IPAddress, RAM, Cores, SystemInfo, type);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, string>> IamOnlineAsync(string Id, string type) {
-            return base.Channel.IamOnlineAsync(Id, type);
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, string>> IamOnlineAsync(string Id, string IPAddress, long RAM, int Cores, string SystemInfo, string type) {
+            return base.Channel.IamOnlineAsync(Id, IPAddress, RAM, Cores, SystemInfo, type);
         }
     }
 }
