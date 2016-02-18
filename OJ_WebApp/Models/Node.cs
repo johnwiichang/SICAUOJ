@@ -15,6 +15,14 @@ namespace OJ_WebApp.Models
 
         public DateTime RunnerLastReport { get; set; } = DateTime.Now.AddYears(-100);
 
+        public string IPAddress { get; set; }
+
+        public long RAM { get; set; }
+
+        public int Cores { get; set; }
+
+        public String SystemInfo { get; set; }
+
         [Required]
         public int MaxTask { get; set; } = 2;
 
