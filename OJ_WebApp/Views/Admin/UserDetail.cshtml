@@ -1,8 +1,8 @@
 ﻿@model OJ_WebApp.Models.User
 
 @{
-    ViewBag.Title = Model.Name + @Resources.Language.Detail;
-    ViewBag.SmallBtn = "<a href='" + Url.Action("EditUser", "Admin", new { Id = Model.Id }) + "' class='btn btn-outline btn-primary btn-xs' type='button'>编辑</a>";
+    ViewBag.Title = Model.Name + Resources.Language.Detail;
+    ViewBag.SmallBtn = "<a href='" + Url.Action("EditUser", "Admin", new { Id = Model.Id }) + "' class='btn btn-outline btn-primary btn-xs' type='button'>" + Resources.Language.Edit + "</a>";
 }
 
 <div class="col-lg-12">

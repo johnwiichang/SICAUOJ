@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Net.Mail;
 using System.Configuration;
 using OJ_WebApp.Service;
+using System.Net;
+using System.IO;
 
 namespace OJ_WebApp.Controllers
 {
@@ -17,15 +19,6 @@ namespace OJ_WebApp.Controllers
     public class UserController : Controller
     {
         OJ_WebAppContext entity = new OJ_WebAppContext();
-
-        public ActionResult GenMail(String email, String code, String IP, bool isReg, string lang)
-        {
-            ViewBag.Email = email;
-            ViewBag.Code = code;
-            ViewBag.IP = IP;
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(lang);
-            return View(isReg ? "RegMail" : "FindPasswordMail");
-        }
 
         [HttpGet]
         public ActionResult Reg(String verify, String email)
@@ -71,8 +64,7 @@ namespace OJ_WebApp.Controllers
             }
             catch (Exception ex)
             {
-                mail.Id = "";
-                return View("New", mail);
+                return Content("<script>alert('" + ex.Message + "');location.href='" + Url.Action("Register", "User", new { }) + "'</script>");
             }
         }
 
@@ -112,8 +104,9 @@ namespace OJ_WebApp.Controllers
             }
             catch (Exception ex)
             {
+                ViewBag.Verify = Request["very_"];
                 u.Password = "";
-                return View(u);
+                return View("Register", u);
             }
         }
 
@@ -156,7 +149,7 @@ namespace OJ_WebApp.Controllers
                     role
                    );
                 string encryptedTicket = FormsAuthentication.Encrypt(authTicket);
-                System.Web.HttpCookie authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
+                HttpCookie authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
                 System.Web.HttpContext.Current.Response.Cookies.Add(authCookie);
                 return Content("<script>location.href = '/Home/Dashboard/'</script>");
             }
@@ -190,11 +183,11 @@ namespace OJ_WebApp.Controllers
                 }
                 else if ((from x in entity.Mails where x.Email == mail.Email && x.CreateTime < now && x.CreateTime > before10min select x).Count() > 2)
                 {
-                    return Content("<script>alert('" + Resources.Language.RequestTooMuch + "');location.href='" + Url.Action("Register", "User") + "';</script>");
+                    return Content("<script>alert('" + Resources.Language.RequestTooMuch + "');location.href='" + Url.Action("Find", "User") + "';</script>");
                 }
                 else if ((from x in entity.Mails where x.IPAdd == mail.IPAdd && x.CreateTime < now && x.CreateTime > before12h select x).Count() > 6)
                 {
-                    return Content("<script>alert('" + Resources.Language.RequestTooMuch + "');location.href='" + Url.Action("Register", "User") + "';</script>");
+                    return Content("<script>alert('" + Resources.Language.RequestTooMuch + "');location.href='" + Url.Action("Find", "User") + "';</script>");
                 }
                 entity.Users.Where(x => x.Email == mail.Email).First().Verification = mail.Id;
                 entity.Mails.Add(mail);
@@ -204,8 +197,7 @@ namespace OJ_WebApp.Controllers
             }
             catch (Exception ex)
             {
-                mail.Id = "";
-                return View(mail);
+                return Content("<script>alert('" + ex.Message + "');location.href='" + Url.Action("ResetPassword", "User", new { }) + "'</script>");
             }
         }
 
@@ -278,32 +270,33 @@ namespace OJ_WebApp.Controllers
             }
         }
 
-        private Task<bool> SendMail(String id, bool isRegRequest, String lang)
+        private async Task<bool> SendMail(String id, bool isRegRequest, String lang)
         {
-            return System.Threading.Tasks.Task.Run(() =>
+            var mailconfig = (EmailConfigurationProvider)ConfigurationManager.GetSection("EmailConfigurationProvider");
+            try
             {
-                var mailconfig = (EmailConfigurationProvider)ConfigurationManager.GetSection("EmailConfigurationProvider");
-                try
-                {
-                    System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(lang);
-                    var mail = entity.Mails.Find(id);
-                    MailAddress from = new MailAddress(mailconfig.Account, mailconfig.Name);
-                    MailAddress to = new MailAddress(mail.Email, mail.Email);
-                    MailMessage message = new MailMessage(from, to);
-                    message.Subject = "SICAU OJ " + (isRegRequest ? Resources.Language.Register : Resources.Language.FindPassword);
-                    message.IsBodyHtml = true;
-                    message.Body = Encoding.UTF8.GetString((new System.Net.WebClient()).DownloadData("http://" + Request.Url.Host.ToString() + ":" + Request.Url.Port + "/User/GenMail?email=" + mail.Email + "&code=" + mail.Id + "&IP=" + mail.IPAdd + "&isReg=" + isRegRequest.ToString() + "&lang=" + lang));
-                    SmtpClient client = new SmtpClient(mailconfig.Server, mailconfig.Port);
-                    client.EnableSsl = mailconfig.IsSSL;
-                    client.Credentials = new System.Net.NetworkCredential(mailconfig.Account, mailconfig.Password);
-                    client.Send(message);
-                }
-                catch (Exception ex)
-                {
-                    ;
-                }
-                return true;
-            });
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(lang);
+                var mail = entity.Mails.Find(id);
+                MailAddress from = new MailAddress(mailconfig.Account, mailconfig.Name);
+                MailAddress to = new MailAddress(mail.Email, mail.Email);
+                MailMessage message = new MailMessage(from, to);
+                message.Subject = "SICAU OJ " + (isRegRequest ? Resources.Language.Register : Resources.Language.FindPassword);
+                message.IsBodyHtml = true;
+                StreamReader sr = new StreamReader(Server.MapPath(@"/Page/" + (isRegRequest ? "RegMail.html" : "FindPasswordMail.html")));
+                message.Body = sr.ReadToEnd().Replace("[SICAUIEC]", Resources.Language.SICAUIEC).Replace("[Year]", DateTime.Now.Year.ToString()).Replace("[FindPasswordDescription]", Resources.Language.FindPassword).Replace("[ConfirmCode]", mail.Id).Replace("[ConfirmCodeDescription]", Resources.Language.ConfirmCode).Replace("[IP]", mail.IPAdd).Replace("[IPDescription]", Resources.Language.Request).Replace("[FindURL]", (Request.Url.AbsoluteUri.Substring(0, 5) == "https" ? "https" : "http") + "://" + (Request.Url.Host.ToString() + (Request.Url.Port == 80 ? "" : (":" + Request.Url.Port.ToString())) + Url.Action("Find", "User", new { }))).Replace("[RegURL]", (Request.Url.AbsoluteUri.Substring(0, 5) == "https" ? "https" : "http") + "://" + (Request.Url.Host.ToString() + (Request.Url.Port == 80 ? "" : (":" + Request.Url.Port.ToString())) + Url.Action("Reg", "User", new { verify = mail.Id, email = mail.Email }))).Replace("[RegisterDescription]", Resources.Language.Register).Replace("[Email]", mail.Email);
+                sr.Close();
+                SmtpClient client = new SmtpClient(mailconfig.Server, mailconfig.Port);
+                client.EnableSsl = mailconfig.IsSSL;
+                client.Credentials = new NetworkCredential(mailconfig.Account, mailconfig.Password);
+                client.Send(message);
+            }
+            catch (Exception ex)
+            {
+                entity.Mails.Remove(entity.Mails.Find(id));
+                entity.SaveChanges();
+                return false;
+            }
+            return true;
         }
     }
 }

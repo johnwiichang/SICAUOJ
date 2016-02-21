@@ -622,7 +622,7 @@
     <value>提交</value>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>成功</value>
+    <value>已提交。</value>
   </data>
   <data name="Summary" xml:space="preserve">
     <value>摘要</value>

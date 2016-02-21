@@ -123,11 +123,18 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\SICAULOGO.png" />
     <Content Include="Global.asax" />
+    <Content Include="Page\FindPasswordMail.html" />
+    <Content Include="Page\RegMail.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\Language.zh-SG.designer.cs">
+      <DependentUpon>Language.zh-SG.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="App_GlobalResources\Language.zh-CN.designer.cs">
       <DependentUpon>Language.zh-CN.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -205,12 +212,11 @@
     <Content Include="Views\Admin\SearchWith.cshtml" />
     <Content Include="Views\User\New.cshtml" />
     <Content Include="Views\User\Find.cshtml" />
+    <None Include="Properties\PublishProfiles\FileSystem.pubxml" />
     <None Include="Properties\PublishProfiles\judge - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\judge - Web Deploy.pubxml" />
     <Content Include="Views\Setting\Node.cshtml" />
     <Content Include="Views\Setting\SaveNode.cshtml" />
-    <Content Include="Views\User\FindPasswordMail.cshtml" />
-    <Content Include="Views\User\RegMail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -249,6 +255,12 @@
     <Content Include="App_GlobalResources\Language.zh-TW.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>Language.zh-TW.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Language.zh-SG.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Language.zh-SG.designer.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <PropertyGroup>
