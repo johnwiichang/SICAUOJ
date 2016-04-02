@@ -48,8 +48,7 @@
                 <p>@Environment.OSVersion</p>
                 <p>.NET Framework @Environment.Version</p>
                 <hr />
-                <p>@Environment.ProcessorCount Cores CPU / @(@Environment.Is64BitOperatingSystem ? Resources.Language.Support64 : Resources.Language.Support32Only)</p>
-                <p>@(Environment.SystemPageSize) MB RAM</p>
+                <p>Web Server: @Environment.ProcessorCount Cores CPU / @(@Environment.Is64BitOperatingSystem ? Resources.Language.Support64 : Resources.Language.Support32Only)</p>
             </div>
             <!-- /.panel-body -->
         </div>

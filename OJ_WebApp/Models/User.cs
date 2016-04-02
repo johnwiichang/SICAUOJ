@@ -36,5 +36,17 @@ namespace OJ_WebApp.Models
 
         public virtual ICollection<Group> Groups { get; set; }
         public virtual Compiler Compiler { get; set; }
+
+        [NotMapped]
+        public int Solved { get; set; }
+
+        [NotMapped]
+        public double SpanOfSolved { get; set; }
+
+        [NotMapped]
+        public int Err { get; set; }
+
+        [NotMapped]
+        public double Total { get; set; }
     }
 }

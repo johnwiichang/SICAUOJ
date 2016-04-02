@@ -187,6 +187,36 @@ namespace OJ_WebApp.Controllers
         public ActionResult GameDetail(Int32 Id)
         {
             var game = entity.Games.Find(Id);
+            var lib = game.GameLib.Issues.Select(x => x.Id);
+            foreach (var item in game.GameLib.Groups.LastOrDefault().Users)
+            {
+                var solved1st = entity.Tasks.Where(x => x.Owner.Id == item.Id && x.isPass && x.CreateTime < game.EndTime && x.CreateTime > game.BeginTime).Select(x => x.Issue.Id).Where(x => lib.Contains(x));
+                List<int> solved = new List<int>();
+                foreach (var iss in solved1st)
+                {
+                    if (solved.IndexOf(iss) == -1)
+                    {
+                        solved.Add(iss);
+                    }
+                }
+                TimeSpan pendingTime = new TimeSpan();
+                DateTime tempTime = game.BeginTime;
+                for (int i = 0; i < solved.Count; i++)
+                {
+                    var createtime = entity.Issues.Find(solved[i]).Tasks.Last(x => x.Owner.Id == item.Id && x.isPass && x.CreateTime < game.EndTime && x.CreateTime > game.BeginTime).CreateTime;
+                    pendingTime += createtime.Subtract(tempTime);
+                    tempTime = createtime;
+                }
+                item.Solved = solved.Count;
+                item.SpanOfSolved = pendingTime.TotalSeconds;
+                var unpass = new List<int>();
+                foreach (var unpassitem in solved)
+                {
+                    unpass.AddRange((from x in entity.Tasks where x.Owner.Id == item.Id && !x.isPass && x.Issue.Id == unpassitem && x.CreateTime < game.EndTime && x.CreateTime > game.BeginTime select x.Id).ToList());
+                }
+                item.Err = unpass.Count;
+                item.Total = item.Err * 1200 + pendingTime.TotalSeconds;
+            }
             return View(game);
         }
 

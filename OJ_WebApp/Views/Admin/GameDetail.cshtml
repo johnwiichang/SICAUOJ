@@ -17,49 +17,21 @@
         <tbody>
             @{
                 var group = Model.GameLib.Groups;
-                var entity = new OJ_WebApp.Models.OJ_WebAppContext();
-                var lib = Model.GameLib.Issues.Select(x=>x.Id);
                 if (group.Count != 0)
                 {
-                    foreach (var item in group.Last().Users)
+                    foreach (var item in group.Last().Users.OrderByDescending(x=>x.Solved).ThenBy(x=>x.Total))
                     {
                         <tr>
                             <td>@item.Id</td>
                             <td>@item.Name</td>
                             <th>
-                                @{
-                                    var solved1st = entity.Tasks.Where(x => x.Owner.Id == item.Id && x.isPass && x.CreateTime < Model.EndTime && x.CreateTime > Model.BeginTime).Select(x => x.Issue.Id).Where(x => lib.Contains(x));
-                                    List<int> solved = new List<int>();
-                                    foreach (var iss in solved1st)
-                                    {
-                                        if (solved.IndexOf(iss) == -1)
-                                        {
-                                            solved.Add(iss);
-                                        }
-                                    }
-                                    TimeSpan pendingTime = new TimeSpan();
-                                    DateTime tempTime = Model.BeginTime;
-                                    for (int i = 0; i < solved.Count; i++)
-                                    {
-                                        var createtime = new OJ_WebApp.Models.OJ_WebAppContext().Issues.Find(solved[i]).Tasks.Last(x => x.Owner.Id == item.Id && x.isPass && x.CreateTime < Model.EndTime && x.CreateTime > Model.BeginTime).CreateTime;
-                                        pendingTime += createtime.Subtract(tempTime);
-                                        tempTime = createtime;
-                                    }
-                                }
-                                @solved.Count() （@pendingTime.TotalSeconds 秒）
+                                @item.Solved （@item.SpanOfSolved 秒）
                             </th>
                             <td>
-                                @{
-                                    var unpass = new List<int>();
-                                    foreach (var unpassitem in solved)
-                                    {
-                                        unpass.AddRange((from x in new OJ_WebApp.Models.OJ_WebAppContext().Tasks where x.Owner.Id == item.Id && !x.isPass && x.Issue.Id == unpassitem && x.CreateTime < Model.EndTime && x.CreateTime > Model.BeginTime select x.Id).ToList());
-                                    }
-                                }
-                                @unpass.Count() （@(unpass.Count() * 1200) 秒）
+                                @item.Err （@(item.Err * 1200) 秒）
                             </td>
                             <td>
-                                @(pendingTime.TotalSeconds + (unpass.Count() * 1200)) 秒
+                                @item.Total 秒
                             </td>
                         </tr>
                                         }

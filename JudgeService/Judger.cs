@@ -77,7 +77,7 @@ namespace JudgeService
                                 Int32 runtimelimit = Int32.Parse(WCFBack["RunTimeLimit"]);
                                 String executionformat = WCFBack["ExecutionFormat"];
                                 tasks.Add(id);
-                                Judge(id, runnerpatth, runnerargs, executionformat, runtimelimit, mem, WCFBack["Input"], WCFBack["Output"]);
+                                Task.Run(() => Judge(id, runnerpatth, runnerargs, executionformat, runtimelimit, mem, WCFBack["Input"], WCFBack["Output"]));
                             }
                             else
                             {

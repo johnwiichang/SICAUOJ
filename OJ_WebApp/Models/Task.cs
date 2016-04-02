@@ -42,6 +42,7 @@ namespace OJ_WebApp.Models
         public virtual Issue Issue { get; set; }
 
         [Required]
+        [ConcurrencyCheck]
         public String status { get; set; } = "WC";
 
         public String Handler { get; set; }
@@ -71,8 +72,10 @@ namespace OJ_WebApp.Models
                         return Resources.Language.InQueue;
                     case "CA":
                         return Resources.Language.CompilerAccept;
-                    case "RA":
+                    case "RE":
                         return Resources.Language.RuntimeError;
+                    case "RA":
+                        return Resources.Language.RunnerAccept;
                     default:
                         return Resources.Language.SystemError;
                 }

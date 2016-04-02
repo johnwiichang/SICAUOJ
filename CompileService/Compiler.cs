@@ -29,7 +29,7 @@ namespace CompileService
             using (TaskRequestServ.TaskPoolClient tp = new TaskRequestServ.TaskPoolClient())
             {
                 HostName = GetType().Assembly.Location.Split('\\').LastOrDefault().Substring(1).Replace(".exe", "");
-                var WCFBack = tp.IamOnline(HostName, Dns.GetHostEntry(Dns.GetHostName()).AddressList.Where(x=>x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork).FirstOrDefault().ToString(), getRAM(), Environment.ProcessorCount, Environment.OSVersion.ToString(), "c");
+                var WCFBack = tp.IamOnline(HostName, Dns.GetHostEntry(Dns.GetHostName()).AddressList.Where(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork).FirstOrDefault().ToString(), getRAM(), Environment.ProcessorCount, Environment.OSVersion.ToString(), "c");
                 if (WCFBack["Err"] != "")
                 {
                     throw new Exception("Instance already exist.");
@@ -79,7 +79,7 @@ namespace CompileService
                                 Int32 compilelimit = Int32.Parse(WCFBack["CompileLimit"]);
                                 String code = WCFBack["Code"];
                                 tasks.Add(id);
-                                Judge(id, compilerpath, compilerargs, code, codeformat, executionformat, isscript, compilelimit);
+                                Task.Run(() => Judge(id, compilerpath, compilerargs, code, codeformat, executionformat, isscript, compilelimit));
                             }
                             else
                             {
